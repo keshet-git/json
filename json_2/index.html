@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON JavaScript Course</title>
+</head>
+
+<body>
+    <div id="button">Press me</div>
+    <input type="text" id="firstName">
+    <script>
+
+        document.getElementById('button').addEventListener('click',addToStorage);
+        function addToStorage(){
+            let tempValue = document.getElementById('firstName').value;
+            console.log('Clicked'+tempValue);
+        }
+        var myJSON = {"first":"Keshet","last":"Avrahami"};
+        console.log(myJSON);
+        var myJSONstringified = JSON.stringify(myJSON);
+        console.log(myJSONstringified);
+        var myJSONparsed = JSON.parse(myJSONstringified);
+        myJSONparsed.first = "bob";
+        console.log(myJSONparsed);
+        var sendData = JSON.stringify(myJSONparsed);
+        console.log(sendData)
+    </script>
+    
+    
+</body>
+</html>
